@@ -34,7 +34,7 @@ class TestOneLoginApp(object):
     """Test class for the OneLoginApp"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
     def setup(self):
         """Setup before each method"""
         # pylint: disable=attribute-defined-outside-init

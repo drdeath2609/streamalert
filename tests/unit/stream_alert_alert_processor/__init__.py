@@ -15,7 +15,7 @@ import json
 from stream_alert.shared import resources
 from stream_alert.shared.config import load_config
 
-REGION = 'us-east-1'
+REGION = 'us-east-2'
 ACCOUNT_ID = '123456789012'
 PREFIX = 'prefix'
 FUNCTION_NAME = '{}_streamalert_alert_processor'.format(PREFIX)

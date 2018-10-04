@@ -472,7 +472,7 @@ class TestStreamThreatIntel(object):
         test_config = {
             'global': {
                 'account': {
-                    'region': 'us-east-1'
+                    'region': 'us-east-2'
                 },
                 'threat_intel': {
                     'dynamodb_table': 'test_table_name',
@@ -516,7 +516,7 @@ class TestStreamThreatIntel(object):
         test_config = {
             'global': {
                 'account': {
-                    'region': 'us-east-1'
+                    'region': 'us-east-2'
                 },
                 'threat_intel': {
                     'dynamodb_table': 'test_table_name',
@@ -530,7 +530,7 @@ class TestStreamThreatIntel(object):
         test_config = {
             'global': {
                 'account': {
-                    'region': 'us-east-1'
+                    'region': 'us-east-2'
                 },
                 'threat_intel': {
                     'dynamodb_table': 'test_table_name',

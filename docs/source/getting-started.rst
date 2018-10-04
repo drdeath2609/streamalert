@@ -130,7 +130,7 @@ SNS for both sending the log data and receiving the alert, but StreamAlert also 
 
 .. code-block:: bash
 
-  export SA_REGION=us-east-1        # StreamAlert deployment region
+  export SA_REGION=us-east-2        # StreamAlert deployment region
   export SA_ACCOUNT=111111111111    # AWS account ID
   export SA_EMAIL=email@domain.com  # Email to receive an SNS notification
 
@@ -231,7 +231,7 @@ alerts on any usage of the root AWS account. Change the rule decorator to:
     },
     "detail-type": "CloudTrail Test",
     "id": "1234",
-    "region": "us-east-1",
+    "region": "us-east-2",
     "resources": [],
     "source": "1.1.1.2",
     "time": "now",

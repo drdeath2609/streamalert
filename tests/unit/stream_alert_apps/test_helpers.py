@@ -159,7 +159,7 @@ class MockLambdaClient(object):
 
 def get_mock_context(func_name):
     """Helper function to create a fake context object using Mock"""
-    arn = 'arn:aws:lambda:us-east-1:123456789012:function:{}:development'
+    arn = 'arn:aws:lambda:us-east-2:123456789012:function:{}:development'
     context = Mock(invoked_function_arn=(arn.format(func_name)),
                    function_name=func_name,
                    function_version='production',

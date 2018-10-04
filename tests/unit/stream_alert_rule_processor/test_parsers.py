@@ -411,7 +411,7 @@ class TestJSONParser(TestParser):
         assert_equal(parsed_result[0]['userIdentity']['userName'],
                      'stream_alert_user')
 
-        assert_equal(parsed_result[1]['awsRegion'], 'us-east-1')
+        assert_equal(parsed_result[1]['awsRegion'], 'us-east-2')
         assert_equal(parsed_result[1]['requestParameters']['streamName'],
                      'stream_alert_prod')
         assert_equal(parsed_result[1]['userIdentity']['userName'],

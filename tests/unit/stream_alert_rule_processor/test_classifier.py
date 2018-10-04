@@ -216,7 +216,7 @@ class TestStreamClassifier(object):
         """StreamClassifier - Extract Service and Entity, SNS"""
         raw_record = {
             'Sns': {'Message': 'test_message'},
-            'EventSubscriptionArn': 'arn:aws:sns:us-east-1:123456789012:unit_test_topic'
+            'EventSubscriptionArn': 'arn:aws:sns:us-east-2:123456789012:unit_test_topic'
         }
 
         service, entity = self.classifier.extract_service_and_entity(raw_record)

@@ -494,7 +494,7 @@ class TestTerraformGenerate(object):
             'cloudwatch_advanced_ap-southeast-1',
             'cloudwatch_advanced_ca-central-1',
             'cloudwatch_advanced_ap-southeast-2',
-            'cloudwatch_advanced_us-east-1',
+            'cloudwatch_advanced_us-east-2',
             'cloudwatch_advanced_us-east-2',
             'cloudwatch_advanced_ap-south-1',
             'cloudwatch_monitoring_advanced',

@@ -8,7 +8,7 @@
 module "kinesis" {
   source                  = "../modules/tf_stream_alert_kinesis"
   account_id              = "333333444444"
-  region                  = "us-east-1"
+  region                  = "us-east-2"
   shards                  = 10
   retention               = 72
 }

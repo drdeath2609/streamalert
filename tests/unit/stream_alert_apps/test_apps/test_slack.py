@@ -35,7 +35,7 @@ class TestSlackApp(object):
     """Test class for the SlackApp"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
     def setup(self):
         """Setup before each method"""
         # pylint: disable=attribute-defined-outside-init
@@ -79,7 +79,7 @@ class TestSlackAccessApp(object):
     """Test class for the SlackAccessApp"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
     def setup(self):
         """Setup before each method"""
         # pylint: disable=attribute-defined-outside-init
@@ -247,7 +247,7 @@ class TestSlackIntegrationsApp(object):
     """Test class for the SlackIntegrationsApp"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
     def setup(self):
         """Setup before each method"""
         # pylint: disable=attribute-defined-outside-init
@@ -429,6 +429,6 @@ def test_filter_entries_not_implemented():
     context = get_mock_context(app_name)
     context.function_name = app_name
 
-    with patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'}):
+    with patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'}):
         put_mock_params(app_name)
         SlackFakeApp(event, context)._filter_response_entries("")

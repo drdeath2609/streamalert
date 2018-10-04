@@ -152,7 +152,7 @@ def test_parse_lambda_arn():
     context = get_mock_context()
 
     env = parse_lambda_arn(context.invoked_function_arn)
-    assert_equal(env['region'], 'us-east-1')
+    assert_equal(env['region'], 'us-east-2')
     assert_equal(env['account_id'], '123456789012')
     assert_equal(env['function_name'], 'corp-prefix_prod_streamalert_rule_processor')
     assert_equal(env['qualifier'], 'development')

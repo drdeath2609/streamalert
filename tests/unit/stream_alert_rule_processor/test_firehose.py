@@ -28,7 +28,7 @@ class TestFirehoseClient(object):
 
     def setup(self):
         """Setup before each method"""
-        self.sa_firehose = FirehoseClient(region='us-east-1')
+        self.sa_firehose = FirehoseClient(region='us-east-2')
 
     def teardown(self):
         """Teardown after each method"""
@@ -224,7 +224,7 @@ class TestFirehoseClient(object):
         firehose_config = {'enabled_logs': ['log-that-doesnt-exist']}
 
         sa_firehose = FirehoseClient(
-            region='us-east-1', firehose_config=firehose_config, log_sources=config['logs'])
+            region='us-east-2', firehose_config=firehose_config, log_sources=config['logs'])
 
         assert_equal(len(sa_firehose._ENABLED_LOGS), 0)
         mock_logging.assert_called_with(

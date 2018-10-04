@@ -57,7 +57,7 @@ class TestStatsPublisher(object):
             'global': {
                 'account': {
                     'aws_account_id': '123456789012',
-                    'region': 'us-east-1'
+                    'region': 'us-east-2'
                 }
             },
             'lambda': {
@@ -67,7 +67,7 @@ class TestStatsPublisher(object):
             }
         }
         topic = self.publisher.formatted_sns_topic_arn(test_config)
-        assert_equal(topic, 'arn:aws:sns:us-east-1:123456789012:foobar')
+        assert_equal(topic, 'arn:aws:sns:us-east-2:123456789012:foobar')
 
     def test_format_digest_no_stats(self):
         """StatsPublisher - Format Digest, No Stats"""

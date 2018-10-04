@@ -50,7 +50,7 @@ class TestRulePromoter(object):
         with patch('stream_alert.rule_promotion.promoter.load_config') as config_mock, \
              patch('stream_alert.rule_promotion.promoter.StatsPublisher', Mock()), \
              patch('boto3.client', _mock_boto), \
-             patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'}):
+             patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'}):
             setup_mock_rules_table(_RULES_TABLE)
             config_mock.return_value = config.load_config('tests/unit/conf/')
             self.promoter = RulePromoter()

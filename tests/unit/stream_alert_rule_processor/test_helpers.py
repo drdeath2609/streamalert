@@ -125,7 +125,7 @@ def make_kinesis_raw_record(kinesis_stream, kinesis_data):
     raw_record = {
         'eventID': 'unit test event id',
         'eventSource': 'aws:kinesis',
-        'eventSourceARN': 'arn:aws:kinesis:us-east-1:123456789012:stream/{}'.format(kinesis_stream),
+        'eventSourceARN': 'arn:aws:kinesis:us-east-2:123456789012:stream/{}'.format(kinesis_stream),
         'kinesis': {
             'data': base64.b64encode(kinesis_data)}}
     return raw_record
@@ -135,7 +135,7 @@ def make_sns_raw_record(topic_name, sns_data):
     """Helper for creating the sns raw record"""
     raw_record = {
         'EventSource': 'aws:kinesis',
-        'EventSubscriptionArn': 'arn:aws:sns:us-east-1:123456789012:{}'.format(topic_name),
+        'EventSubscriptionArn': 'arn:aws:sns:us-east-2:123456789012:{}'.format(topic_name),
         'Sns': {
             'MessageId': 'unit test message id',
             'Message': sns_data}}
@@ -161,7 +161,7 @@ def make_s3_raw_record(bucket, key, size=100):
                 }
             }
         },
-        'awsRegion': 'us-east-1'
+        'awsRegion': 'us-east-2'
     }
 
 

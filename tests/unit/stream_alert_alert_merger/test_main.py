@@ -59,7 +59,7 @@ class TestAlertMerger(object):
         'ALERT_PROCESSOR': _ALERT_PROCESSOR,
         'ALERT_PROCESSOR_TIMEOUT_SEC': str(_ALERT_PROCESSOR_TIMEOUT_SEC),
         'ALERTS_TABLE': _ALERTS_TABLE,
-        'AWS_DEFAULT_REGION': 'us-east-1'
+        'AWS_DEFAULT_REGION': 'us-east-2'
     })
     def setup(self):
         """Alert Merger - Setup"""
@@ -68,7 +68,7 @@ class TestAlertMerger(object):
         self.dynamo_mock.start()
         self.lambda_mock.start()
 
-        create_lambda_function(_ALERT_PROCESSOR, 'us-east-1')
+        create_lambda_function(_ALERT_PROCESSOR, 'us-east-2')
         setup_mock_alerts_table(_ALERTS_TABLE)
         self.merger = main.AlertMerger.get_instance()
 

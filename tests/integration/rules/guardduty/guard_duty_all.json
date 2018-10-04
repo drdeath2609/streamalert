@@ -5,7 +5,7 @@
       "detail":{},
       "detail-type":"GuardDuty Finding",
       "id":"00000000-0000-0000-0000-000000000000",
-      "region":"us-east-1",
+      "region":"us-east-2",
       "resources":[],
       "source":"aws.guardduty",
       "time":"2018-02-13T18:25:01Z",

@@ -207,7 +207,7 @@ def basic_streamalert_config():
                         'secret_key'
                     ]
                 },
-                'region': 'us-east-1'
+                'region': 'us-east-2'
             },
             'corp': {
                 'id': 'corp',
@@ -255,7 +255,7 @@ def basic_streamalert_config():
                         }
                     }
                 },
-                'region': 'us-east-1'
+                'region': 'us-east-2'
             }
         }
     }

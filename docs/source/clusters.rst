@@ -51,7 +51,7 @@ Example: Minimal Cluster
         }
       }
     },
-    "region": "us-east-1"
+    "region": "us-east-2"
   }
 
 Example: Rule Processor with SNS Inputs
@@ -76,7 +76,7 @@ Example: Rule Processor with SNS Inputs
         }
       }
     },
-    "region": "us-east-1"
+    "region": "us-east-2"
   }
 
 Configuration Options
@@ -124,7 +124,7 @@ Example: CloudTrail via S3 Events
         }
       }
     },
-    "region": "us-east-1"
+    "region": "us-east-2"
   }
 
 This creates a new CloudTrail and an S3 bucket for the resulting logs. Each new object in the bucket
@@ -163,7 +163,7 @@ Example: CloudTrail via CloudWatch Logs
           }
         }
       },
-      "region": "us-east-1"
+      "region": "us-east-2"
     }
 
 This also creates the CloudTrail and S3 bucket, but now the CloudTrail logs are also delivered to
@@ -238,7 +238,7 @@ Example: CloudWatch Logs Cluster
         }
       }
     },
-    "region": "us-east-1"
+    "region": "us-east-2"
   }
 
 This creates an IAM role for CloudWatch subscriptions, authorized to gather logs from the StreamAlert account
@@ -298,7 +298,7 @@ Example: Enable CloudWatch Monitoring
         }
       }
     },
-    "region": "us-east-1"
+    "region": "us-east-2"
   }
 
 This enables both the Kinesis and Lambda alarms and illustrates how the alarm thresholds can be tuned.
@@ -430,7 +430,7 @@ Example: Kinesis Cluster
         "secret_key"
       ]
     },
-    "region": "us-east-1",
+    "region": "us-east-2",
   }
 
 This creates a Kinesis stream and an associated IAM user and hooks up stream events to the
@@ -557,7 +557,7 @@ Example: Flow Logs Cluster
           }
         }
       },
-      "region": "us-east-1"
+      "region": "us-east-2"
     }
 
 This creates the ``flow-logs-test`` CloudWatch Log group, adds flow logs to the specified subnet
@@ -616,7 +616,7 @@ Example: S3 Events Cluster
           }
         }
       },
-      "region": "us-east-1"
+      "region": "us-east-2"
     }
 
 This configures 2 buckets to notify the rule processor in this cluster, and authorizes StreamAlert

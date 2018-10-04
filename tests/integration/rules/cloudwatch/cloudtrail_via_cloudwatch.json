@@ -4,7 +4,7 @@
       "messageType": "DATA_MESSAGE",
       "owner": "123456789012",
       "logGroup": "CloudTrail/DefaultLogGroup",
-      "logStream": "123456789012_CloudTrail_us-east-1",
+      "logStream": "123456789012_CloudTrail_us-east-2",
       "subscriptionFilters": [
         "FooBarSubscription"
       ],

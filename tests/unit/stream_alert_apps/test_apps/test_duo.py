@@ -36,7 +36,7 @@ class TestDuoApp(object):
     """Test class for the DuoApp"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
     def setup(self):
         """Setup before each method"""
         # pylint: disable=abstract-class-instantiated,attribute-defined-outside-init

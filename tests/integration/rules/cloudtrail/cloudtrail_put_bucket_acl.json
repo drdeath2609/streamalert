@@ -3,7 +3,7 @@
     "data":{
       "account":12345,
       "detail":{
-        "awsRegion":"us-east-1",
+        "awsRegion":"us-east-2",
         "eventID":"...",
         "eventName":"PutBucketAcl",
         "eventSource":"s3.amazonaws.com",
@@ -90,7 +90,7 @@
       },
       "detail-type":"...",
       "id":"12345",
-      "region":"us-east-1",
+      "region":"us-east-2",
       "resources":{
         "test":"..."
       },
@@ -110,7 +110,7 @@
     "data":{
       "account":12345,
       "detail":{
-        "awsRegion":"us-east-1",
+        "awsRegion":"us-east-2",
         "eventID":"...",
         "eventName":"PutBucketAcl",
         "eventSource":"...",
@@ -197,7 +197,7 @@
       },
       "detail-type":"...",
       "id":"12345",
-      "region":"us-east-1",
+      "region":"us-east-2",
       "resources":{
         "test":"..."
       },

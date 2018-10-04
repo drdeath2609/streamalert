@@ -33,7 +33,7 @@ class TestAppConfig(object):
     """Test class for AppConfig"""
     # pylint: disable=protected-access,no-self-use,too-many-public-methods
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
     def setup(self):
         """Setup before each method"""
         # pylint: disable=attribute-defined-outside-init
@@ -112,7 +112,7 @@ class TestAppConfig(object):
     @raises(AppConfigError)
     def test_get_parameters_invalid_json(self):
         """AppConfig - Get Parameters, Invalid JSON"""
-        with patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'}):
+        with patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'}):
             key = '{}_state'.format(self._test_app_name)
             boto3.client('ssm').put_parameter(
                 Name=key,

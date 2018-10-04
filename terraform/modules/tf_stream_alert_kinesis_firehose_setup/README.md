@@ -9,7 +9,7 @@
 module "kinesis_firehose" {
   source                  = "../modules/tf_stream_alert_kinesis_firehose"
   account_id              = "111111222222"
-  region                  = "us-east-1"
+  region                  = "us-east-2"
   prefix                  = "my-company"
   logs                    = ["json_data", "csv_data"]
   s3_bucket_name          = "my-data-bucket.id"

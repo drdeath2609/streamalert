@@ -11,7 +11,7 @@ This Terraform module creates the necessary IAM Permissions to coincide with the
 ```hcl
 module "stream_alert_app" {
   account_id                   = "123456789012"
-  region                       = "us-east-1"
+  region                       = "us-east-2"
   function_name                = "testprefix_prod_duo_auth_duo_auth_app"
   function_role_id             = "testprefix_prod_duo_auth_duo_auth_app_role_id"
   destination_function_name    = "testprefix_prod_streamalert_rule_processor"
