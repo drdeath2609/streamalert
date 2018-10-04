@@ -27,7 +27,7 @@ class TestAppBatcher(object):
     """Class for handling testing of the app integration output batcher"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
     def setup(self):
         """Setup class before tests"""
         # pylint: disable=attribute-defined-outside-init

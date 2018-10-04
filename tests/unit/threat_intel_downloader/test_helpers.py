@@ -33,7 +33,7 @@ def put_mock_params(key, value):
 def get_mock_context(milliseconds=100):
     """Helper function to create a fake context object using Mock"""
     func_name = 'prefix_threat_intel_downloader'
-    arn = 'arn:aws:lambda:us-east-2:123456789012:function:{}:development'
+    arn = 'arn:aws:lambda:us-east-1:123456789012:function:{}:development'
     return Mock(invoked_function_arn=(arn.format(func_name)),
                 function_name=func_name,
                 get_remaining_time_in_millis=lambda: milliseconds)

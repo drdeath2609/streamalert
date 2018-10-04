@@ -131,7 +131,7 @@ def test_pre_parse_kinesis(log_mock):
     log_mock.assert_called_with('Pre-parsing record from Kinesis. '
                                 'eventID: %s, eventSourceARN: %s',
                                 'unit test event id',
-                                'arn:aws:kinesis:us-east-2:123456789012:stream/{}'
+                                'arn:aws:kinesis:us-east-1:123456789012:stream/{}'
                                 .format(entity))
 
 
@@ -149,7 +149,7 @@ def test_pre_parse_sns(log_mock):
     log_mock.assert_called_with('Pre-parsing record from SNS. '
                                 'MessageId: %s, EventSubscriptionArn: %s',
                                 'unit test message id',
-                                'arn:aws:sns:us-east-2:123456789012:unit_topic')
+                                'arn:aws:sns:us-east-1:123456789012:unit_topic')
 
 
 @patch('stream_alert.rule_processor.payload.S3Payload._get_object')
@@ -245,7 +245,7 @@ def test_s3_download_object():
     S3Payload.s3_object_size = (1024 * 1024)
 
     downloaded_path = s3_payload._download_object(
-        'us-east-2', 'unit_bucket_name', key)
+        'us-east-1', 'unit_bucket_name', key)
 
     assert_true(downloaded_path.endswith('test-unit-s3-object.gz'))
 
@@ -257,7 +257,7 @@ def test_s3_download_object_zero_size(*_):
     raw_record = make_s3_raw_record('unit_bucket_name', 'unit_key_name', 0)
     s3_payload = load_stream_payload('s3', 'unit_key_name', raw_record)
 
-    assert_is_none(s3_payload._download_object('us-east-2', 'unit_bucket_name', 'unit_key_name'))
+    assert_is_none(s3_payload._download_object('us-east-1', 'unit_bucket_name', 'unit_key_name'))
 
 
 @with_setup(setup=None, teardown=teardown_s3)
@@ -271,7 +271,7 @@ def test_s3_download_object_mb(log_mock):
     s3_payload = load_stream_payload('s3', 'unit_key_name', raw_record)
     S3Payload.s3_object_size = (127.8 * 1024 * 1024)
 
-    s3_payload._download_object('us-east-2', 'unit_bucket_name', 'unit_key_name')
+    s3_payload._download_object('us-east-1', 'unit_bucket_name', 'unit_key_name')
 
     assert_equal(log_mock.call_args_list[0],
                  call('[S3Payload] Starting download from S3: %s/%s [%s]',

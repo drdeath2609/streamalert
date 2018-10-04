@@ -155,7 +155,7 @@ class TestRulesEngine(object):
                     },
                     'eventType': 'CreateSomeResource',
                     'responseElements': 'Response',
-                    'awsRegion': 'us-east-2',
+                    'awsRegion': 'us-east-1',
                     'eventName': 'CreateResource',
                     'userIdentity': {
                         'name': 'john',
@@ -196,7 +196,7 @@ class TestRulesEngine(object):
                     'requestParameters': None,
                     'eventType': 'CreateSomeResource',
                     'responseElements': 'Response',
-                    'awsRegion': 'us-east-2',
+                    'awsRegion': 'us-east-1',
                     'eventName': 'CreateResource',
                     'userIdentity': {
                         'name': 'john',
@@ -998,7 +998,7 @@ class TestRulesEngine(object):
                 assert_equal(self.rules_engine._RULE_TABLE_LAST_REFRESH, fake_date_now)
                 log_mock.assert_called()
 
-    @patch.dict('os.environ', {'AWS_DEFAULT_REGION': 'us-east-2'})
+    @patch.dict('os.environ', {'AWS_DEFAULT_REGION': 'us-east-1'})
     def test_rule_staged_only(self):
         """Rules Engine - Staged Rule"""
         @rule(logs=['cloudwatch:test_match_types'],
@@ -1059,10 +1059,10 @@ class TestRulesEngine(object):
         s3_mock = mock_s3()
         s3_mock.start()
         put_mock_s3_object(
-            'bucket_name', 'foo.json', json.dumps({'key1': 'value1'}), 'us-east-2'
+            'bucket_name', 'foo.json', json.dumps({'key1': 'value1'}), 'us-east-1'
         )
         put_mock_s3_object(
-            'bucket_name', 'bar.json', json.dumps({'key2': 'value2'}), 'us-east-2'
+            'bucket_name', 'bar.json', json.dumps({'key2': 'value2'}), 'us-east-1'
         )
         self.config['global']['infrastructure']['lookup_tables']['enabled'] = True
         _ = RulesEngine(self.config)

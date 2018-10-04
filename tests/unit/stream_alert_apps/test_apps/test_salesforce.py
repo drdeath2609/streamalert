@@ -45,7 +45,7 @@ class TestSalesforceApp(object):
     """Test class for the SalesforceApp"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
     def setup(self):
         """Setup before each method"""
         # pylint: disable=attribute-defined-outside-init

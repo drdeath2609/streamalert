@@ -92,7 +92,7 @@ class TestAppIntegration(object):
     # Remove all abstractmethods so we can instantiate AppIntegration for testing
     @patch.object(AppIntegration, '__abstractmethods__', frozenset())
     @patch('stream_alert.apps.app_base.Batcher', Mock())
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
     def setup(self):
         """Setup before each method"""
         # pylint: disable=abstract-class-instantiated,attribute-defined-outside-init

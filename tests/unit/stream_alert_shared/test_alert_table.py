@@ -32,7 +32,7 @@ class TestAlertTable(object):
     """Tests for shared/alert_table.py"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
     def setup(self):
         """Alert Table - Create mock table and alerts"""
         # pylint: disable=attribute-defined-outside-init

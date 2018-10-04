@@ -26,7 +26,7 @@ class TestStagingStatistic(object):
     """Tests for rule_promotion/statistic.py:StagingStatistic"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
     def setup(self):
         """StagingStatistic - Setup"""
         # pylint: disable=attribute-defined-outside-init

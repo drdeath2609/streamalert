@@ -83,7 +83,7 @@ class StreamThreatIntel(object):
 
     def __init__(self, **kwargs):
         self.excluded_iocs = self._setup_excluded_iocs(kwargs.get('excluded_iocs'))
-        self.dynamodb = boto3.client('dynamodb', kwargs.get('region', 'us-east-2'))
+        self.dynamodb = boto3.client('dynamodb', kwargs.get('region', 'us-east-1'))
         self._table = kwargs.get('table')
 
     def threat_detection(self, records):
@@ -206,7 +206,7 @@ class StreamThreatIntel(object):
         if intel_config and intel_config.get('enabled') and intel_config.get('dynamodb_table'):
             return cls(excluded_iocs=intel_config.get('excluded_iocs'),
                        table=intel_config['dynamodb_table'],
-                       region=config['global']['account'].get('region', 'us-east-2'))
+                       region=config['global']['account'].get('region', 'us-east-1'))
 
         return False
 

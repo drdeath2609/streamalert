@@ -276,7 +276,7 @@ def _get_record_template(service):
                 'x-amz-id-2': 'EXAMPLE123/5678abcdefghijklambdaisawesome/mnopqrstuvwxyzABCDEFGH',
                 'x-amz-request-id': 'EXAMPLE123456789'
             },
-            'awsRegion': 'us-east-2',
+            'awsRegion': 'us-east-1',
             'eventName': 'ObjectCreated:Put',
             'userIdentity': {
                 'principalId': 'EXAMPLE'
@@ -299,7 +299,7 @@ def _get_record_template(service):
             'eventName': 'aws:kinesis:record',
             'eventSourceARN': '<TO_BE_REPLACED>',
             'eventSource': 'aws:kinesis',
-            'awsRegion': 'us-east-2'
+            'awsRegion': 'us-east-1'
         }
 
     elif service == 'sns':
@@ -384,7 +384,7 @@ def format_lambda_test_record(test_record):
         record_template['s3']['bucket']['name'] = source
 
         # Create the mocked s3 object in the designated bucket with the random key
-        put_mock_s3_object(source, test_record['key'], data, 'us-east-2')
+        put_mock_s3_object(source, test_record['key'], data, 'us-east-1')
 
     elif service == 'kinesis':
         if compress:
@@ -393,12 +393,12 @@ def format_lambda_test_record(test_record):
             kinesis_data = base64.b64encode(data)
 
         record_template['kinesis']['data'] = kinesis_data
-        record_template['eventSourceARN'] = ('arn:aws:kinesis:us-east-2:111222333:'
+        record_template['eventSourceARN'] = ('arn:aws:kinesis:us-east-1:111222333:'
                                              'stream/{}'.format(source))
 
     elif service == 'sns':
         record_template['Sns']['Message'] = data
-        record_template['EventSubscriptionArn'] = 'arn:aws:sns:us-east-2:111222333:{}'.format(
+        record_template['EventSubscriptionArn'] = 'arn:aws:sns:us-east-1:111222333:{}'.format(
             source)
 
     elif service == 'stream_alert_app':

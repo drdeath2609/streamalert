@@ -52,7 +52,7 @@ def test_generate_s3_events():
                 'enable_events': True,
                 'lambda_role_id': '${module.stream_alert_advanced.lambda_role_id}',
                 'filter_suffix': '.log',
-                'filter_prefix': 'AWSLogs/123456789/CloudTrail/us-east-2/'
+                'filter_prefix': 'AWSLogs/123456789/CloudTrail/us-east-1/'
             },
             's3_events_unit-testing_advanced_1': {
                 'source': 'modules/tf_stream_alert_s3_events',

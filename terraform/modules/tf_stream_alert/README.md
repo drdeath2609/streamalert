@@ -11,7 +11,7 @@ This Terraform module creates the rule processor and its associated components:
 module "stream_alert" {
   source                       = "../modules/tf_stream_alert"
   account_id                   = "112233445566"
-  region                       = "us-east-2"
+  region                       = "us-east-1"
   lambda_function_prod_version = "$LATEST"
   lambda_handler               = "main.lambda_handler"
 }

@@ -42,7 +42,7 @@ from tests.unit.stream_alert_rule_processor.test_helpers import (
 
 
 @mock_dynamodb2
-@patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2', 'CLUSTER': 'corp'})
+@patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1', 'CLUSTER': 'corp'})
 class TestStreamAlert(object):
     """Test class for StreamAlert class"""
 
@@ -50,7 +50,7 @@ class TestStreamAlert(object):
            Mock(return_value=load_config('tests/unit/conf/', validate=True)))
     @patch.dict(os.environ, {'ALERT_PROCESSOR': 'unit-testing_streamalert_alert_processor',
                              'ALERTS_TABLE': 'unit-testing_streamalert_alerts',
-                             'AWS_DEFAULT_REGION': 'us-east-2'})
+                             'AWS_DEFAULT_REGION': 'us-east-1'})
     def setup(self):
         """Setup before each method"""
         self.__sa_handler = handler.StreamAlert(get_mock_context())
@@ -223,7 +223,7 @@ class TestStreamAlert(object):
     def test_firehose_record_delivery_disabled_logs(self):
         """StreamAlert Class - Firehose Record Delivery - Disabled Logs"""
         self.__sa_handler.firehose_client = boto3.client(
-            'firehose', region_name='us-east-2')
+            'firehose', region_name='us-east-1')
 
         test_event = convert_events_to_kinesis([
             # unit_test_simple_log
@@ -271,7 +271,7 @@ class TestStreamAlert(object):
 
         mock_threat_intel.return_value = StreamThreatIntel(excluded_iocs={},
                                                            table='test_table_name',
-                                                           region='us-east-2')
+                                                           region='us-east-1')
         mock_query.return_value = ([], [])
 
         sa_handler = handler.StreamAlert(get_mock_context())
@@ -313,7 +313,7 @@ class TestStreamAlert(object):
 
         mock_threat_intel.return_value = StreamThreatIntel(excluded_iocs=None,
                                                            table='test_table_name',
-                                                           region='us-east-2')
+                                                           region='us-east-1')
         mock_query.return_value = ([], [])
 
         sa_handler = handler.StreamAlert(get_mock_context())

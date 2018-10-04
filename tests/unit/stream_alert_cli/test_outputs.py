@@ -33,7 +33,7 @@ def test_encrypt_and_push_creds_to_s3(cli_mock):
             description='short description of info needed',
             value='http://this.url.value')}
 
-    return_value = encrypt_and_push_creds_to_s3('us-east-2', 'bucket', 'key', props, 'test_alias')
+    return_value = encrypt_and_push_creds_to_s3('us-east-1', 'bucket', 'key', props, 'test_alias')
 
     assert_true(return_value)
     cli_mock.assert_not_called()
@@ -44,9 +44,9 @@ def test_encrypt_and_push_creds_to_s3(cli_mock):
         cred_requirement=True)
 
     # Create the bucket to hold the mock object being put
-    boto3.client('s3', region_name='us-east-2').create_bucket(Bucket='bucket')
+    boto3.client('s3', region_name='us-east-1').create_bucket(Bucket='bucket')
 
-    return_value = encrypt_and_push_creds_to_s3('us-east-2', 'bucket', 'key', props, 'test_alias')
+    return_value = encrypt_and_push_creds_to_s3('us-east-1', 'bucket', 'key', props, 'test_alias')
 
     assert_true(return_value)
 
@@ -73,6 +73,6 @@ def test_encrypt_and_push_creds_to_s3_kms_failure(log_mock, boto_mock):
 
     # Add ClientError side_effect to mock
     boto_mock.side_effect = ClientError(err_response, 'operation')
-    encrypt_and_push_creds_to_s3('us-east-2', 'bucket', 'key', props, 'test_alias')
+    encrypt_and_push_creds_to_s3('us-east-1', 'bucket', 'key', props, 'test_alias')
 
     log_mock.assert_called_with('An error occurred during credential encryption')

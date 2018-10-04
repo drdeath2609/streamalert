@@ -32,7 +32,7 @@ class TestRuleTable(object):
     """Tests for shared/rule_table.py"""
     # pylint: disable=protected-access
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
     def setup(self):
         """Rule Table - Create mock table and rules"""
         # pylint: disable=attribute-defined-outside-init

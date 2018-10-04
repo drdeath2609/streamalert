@@ -33,7 +33,7 @@ class TestLookupTables(object):
     """Test LookupTables class"""
     def __init__(self):
         self.buckets_info = {'bucket_name': ['foo.json', 'bar.json']}
-        self.region = 'us-east-2'
+        self.region = 'us-east-1'
 
     def setup(self):
         """LookupTables - Setup S3 bucket mocking"""

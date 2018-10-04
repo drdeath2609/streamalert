@@ -103,7 +103,7 @@ class AliyunApp(AppIntegration):
             if region in {'cn-qingdao', 'cn-beijing', 'cn-zhangjiakou', 'cn-huhehaote',
                           'cn-hangzhou', 'cn-shanghai', 'cn-shenzhen', 'cn-hongkong',
                           'ap-southeast-1', 'ap-southeast-2', 'ap-southeast-3', 'ap-southeast-5',
-                          'ap-northeast-1', 'ap-south-1', 'us-west-1', 'us-east-2',
+                          'ap-northeast-1', 'ap-south-1', 'us-west-1', 'us-east-1',
                           'eu-central-1', 'me-east-1'}:
                 return region
             return False

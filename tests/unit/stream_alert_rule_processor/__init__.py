@@ -14,5 +14,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 '''
 
-REGION = 'us-east-2'
+REGION = 'us-east-1'
 FUNCTION_NAME = 'corp-prefix_prod_streamalert_rule_processor'

@@ -17,7 +17,7 @@ module "flow_logs_prod" {
   flow_log_group_name    = "prefix_cluster_streamalert_flow_logs"
   destination_stream_arn = "arn:aws:kinesis:region:account-id:stream/stream-name"
   vpcs                   = ["vpc"]
-  region                 = "us-east-2"
+  region                 = "us-east-1"
 }
 ```
 

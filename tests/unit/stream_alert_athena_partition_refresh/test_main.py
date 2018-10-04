@@ -34,7 +34,7 @@ class TestAthenaRefresher(object):
 
     @patch('stream_alert.athena_partition_refresh.main.load_config',
            Mock(return_value=load_config('tests/unit/conf/')))
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
     @patch('stream_alert.shared.athena.boto3')
     def setup(self, boto_patch):
         """Setup the AthenaRefresher tests"""

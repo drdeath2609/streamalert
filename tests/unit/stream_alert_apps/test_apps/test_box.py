@@ -36,7 +36,7 @@ class TestBoxApp(object):
     """Test class for the BoxApp"""
     # pylint: disable=protected-access,no-self-use
 
-    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-2'})
+    @patch.dict(os.environ, {'AWS_DEFAULT_REGION': 'us-east-1'})
     def setup(self):
         """Setup before each method"""
         # pylint: disable=attribute-defined-outside-init

@@ -881,7 +881,7 @@ class AlertProcessorTester(object):
                          'email_from': 'blah@foo.bar',
                          'integration_key': '247b97499078a015cc6c586bc0a92de6'}
                 helpers.put_mock_creds(output_name, creds, self.secrets_bucket,
-                                       'us-east-2', self.kms_alias)
+                                       'us-east-1', self.kms_alias)
 
             elif service == 'phantom':
                 output_name = '{}/{}'.format(service, descriptor)
@@ -905,7 +905,7 @@ class AlertProcessorTester(object):
                          'issue_type': 'Task',
                          'aggregate': 'no'}
                 helpers.put_mock_creds(output_name, creds, self.secrets_bucket,
-                                       'us-east-2', self.kms_alias)
+                                       'us-east-1', self.kms_alias)
 
             elif service == 'github':
                 output_name = '{}/{}'.format(service, descriptor)
@@ -914,7 +914,7 @@ class AlertProcessorTester(object):
                          'access_token': 'foobar',
                          'labels': 'test-label'}
                 helpers.put_mock_creds(output_name, creds, self.secrets_bucket,
-                                       'us-east-2', self.kms_alias)
+                                       'us-east-1', self.kms_alias)
 
     @staticmethod
     def _cleanup_old_secrets():
