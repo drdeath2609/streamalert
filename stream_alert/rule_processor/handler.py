@@ -65,6 +65,7 @@ class StreamAlert(object):
 
         # Create an instance of the RulesEngine class that gets cached in the
         # StreamAlert class as an instance property
+        # Priyesh#1 - Rule Enginer Initialization
         self._rules_engine = RulesEngine(self.config, *rule_import_paths)
 
         # Firehose client attribute
@@ -205,6 +206,7 @@ class StreamAlert(object):
                 record.log_source,
                 record.entity)
 
+            # Priyesh#2 - Applies rule engine for current record of event
             record_alerts, normalized_records = self._rules_engine.run(record)
 
             payload_with_normalized_records.extend(normalized_records)
@@ -223,6 +225,7 @@ class StreamAlert(object):
             # Extend the list of alerts with any new ones so they can be returned
             self._alerts.extend(record_alerts)
 
+            # Priyesh#3 - Adds the record in the alert table on Dynamodb
             self.alert_forwarder.send_alerts(record_alerts)
 
         return payload_with_normalized_records

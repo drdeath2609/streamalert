@@ -40,6 +40,7 @@ class AlertForwarder(object):
             alerts (list): A list of Alert instances to save to Dynamo.
         """
         try:
+            # Priyesh#4 - Here it is adding
             self._table.add_alerts(alerts)
             LOGGER.info('Successfully sent %d alert(s) to dynamo:%s', len(alerts), self._table.name)
         except ClientError:

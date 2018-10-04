@@ -113,7 +113,7 @@ class AlertMerger(object):
                 merge_groups.append(AlertMergeGroup(alert))
 
         return merge_groups
-
+    # Priyesh#6 - Invokes alert processor lambda functions
     def _dispatch_alert(self, alert):
         """Dispatch a single alert to the alert processor."""
         alert.attempts += 1
@@ -146,6 +146,7 @@ class AlertMerger(object):
         alerts_to_delete = []  # List of alerts which can be deleted
 
         # TODO: Find a way to avoid a full table scan just to get rule names
+        # Priyesh#5 - Fetches all types of rules from the alert table and groups for each type of rule
         for rule_name in self.table.rule_names():
             alerts = self._get_alerts(rule_name)
             if not alerts:

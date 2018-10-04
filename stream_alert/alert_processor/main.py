@@ -163,7 +163,7 @@ class AlertProcessor(object):
         self._update_table(alert, result)
         return result
 
-
+# Priyesh#7 - Alert Processor starts here
 def handler(event, context):
     """StreamAlert Alert Processor - entry point
 
